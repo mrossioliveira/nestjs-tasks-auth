@@ -9,8 +9,8 @@ async function bootstrap() {
   const microserviceOptions = {
     transport: Transport.TCP,
     options: {
-      host: process.env.AUTH_TCP_HOST || 'localhost',
-      port: process.env.AUTH_TCP_PORT || 8000,
+      host: process.env.HOST || 'localhost',
+      port: process.env.PORT || 8000,
     },
   };
 
