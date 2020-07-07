@@ -1,0 +1,29 @@
+version: '3'
+services:
+  auth_db:
+    image: postgres:alpine
+    environment:
+      - POSTGRES_DB=tasks_auth
+      - POSTGRES_USER=tasks_auth
+      - POSTGRES_PASSWORD=password
+    ports:
+      - '5433:5432'
+    networks:
+      - database
+  auth:
+    command: npm run start:dev
+    build: .
+    env_file:
+      - .env
+    ports:
+      - '8000:8000'
+    networks:
+      - database
+      - tasks-backend
+    depends_on:
+      - auth_db
+
+networks:
+  database:
+  tasks-backend:
+    external: true

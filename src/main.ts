@@ -9,7 +9,7 @@ async function bootstrap() {
   const microserviceOptions = {
     transport: Transport.TCP,
     options: {
-      host: process.env.HOST || 'localhost',
+      host: process.env.HOST || '0.0.0.0',
       port: process.env.PORT || 8000,
     },
   };
@@ -18,6 +18,8 @@ async function bootstrap() {
     AppModule,
     microserviceOptions,
   );
-  app.listen(() => logger.log('Auth microservice running...'));
+  app.listen(() => {
+    logger.log('Auth microservice running...');
+  });
 }
 bootstrap();
