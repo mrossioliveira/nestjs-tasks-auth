@@ -2,7 +2,7 @@
 
 Backend authentication service for NestJS learning.
 
-This service is used by the [http service](https://github.com/mrossioliveira/flutter-tasks) to authentication and token validation.
+This service is used by the [http service](https://github.com/mrossioliveira/nestjs-tasks) to authentication and token validation.
 
 > :warning: Please make sure you spin up the http service before this one so they will share the same network.
 
